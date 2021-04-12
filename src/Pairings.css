@@ -1,0 +1,13 @@
+.pairings {
+  padding: 20px;
+}
+
+.pairings__footer {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
