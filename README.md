@@ -8,7 +8,13 @@ Work in progress...
 
 ### V1
 
-* built
+* built search function
+* built introduction
+
+### Need to do
+
+* fetch from API
+* show recipes
 
 ### Possible improvements
 
