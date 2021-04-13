@@ -1,0 +1,194 @@
+[
+    {
+        "param": "cheese",
+        "name": "Cheese"
+    },
+    {
+        "param": "burger",
+        "name": "Burger"
+    },
+    {
+        "param": "steak",
+        "name": "Steak"
+    },
+    {
+        "param": "oyster",
+        "name": "Oyster"
+    },
+    {
+        "param": "pizza",
+        "name": "Pizza"
+    },
+    {
+        "param": "chicken",
+        "name": "Chicken"
+    },
+    {
+        "param": "clam",
+        "name": "Clam"
+    },
+    {
+        "param": "taco",
+        "name": "Taco"
+    },
+    {
+        "param": "sushi",
+        "name": "Sushi"
+    },
+    {
+        "param": "pasta",
+        "name": "Pasta"
+    },
+    {
+        "param": "salad",
+        "name": "Salad"
+    },
+    {
+        "param": "cake",
+        "name": "Cake"
+    },
+    {
+        "param": "curry",
+        "name": "Curry"
+    },
+    {
+        "param": "salmon",
+        "name": "Salmon"
+    },
+    {
+        "param": "lamb",
+        "name": "Lamb"
+    },
+    {
+        "param": "shrimp",
+        "name": "Shrimp"
+    },
+    {
+        "param": "fish",
+        "name": "Fish"
+    },
+    {
+        "param": "duck",
+        "name": "Duck"
+    },
+    {
+        "param": "chocolate",
+        "name": "Chocolate"
+    },
+    {
+        "param": "turkey",
+        "name": "Turkey"
+    },
+    {
+        "param": "tuna",
+        "name": "Tuna"
+    },
+    {
+        "param": "caviar",
+        "name": "Caviar"
+    },
+    {
+        "param": "noodle",
+        "name": "Noodle"
+    },
+    {
+        "param": "pie",
+        "name": "Pie"
+    },
+    {
+        "param": "pork",
+        "name": "Pork"
+    },
+    {
+        "param": "pho",
+        "name": "Pho"
+    },
+    {
+        "param": "strawberries",
+        "name": "Strawberries"
+    },
+    {
+        "param": "ratatouille",
+        "name": "Ratatouille"
+    },
+    {
+        "param": "beef",
+        "name": "Beef"
+    },
+    {
+        "param": "apple",
+        "name": "Apple"
+    },
+    {
+        "param": "carbonara",
+        "name": "Carbonara"
+    },
+    {
+        "param": "kimchi",
+        "name": "Kimchi"
+    },
+    {
+        "param": "paella",
+        "name": "Paella"
+    },
+    {
+        "param": "quesadilla",
+        "name": "Quesadilla"
+    },
+    {
+        "param": "cod",
+        "name": "Cod"
+    },
+    {
+        "param": "hamburger",
+        "name": "Hamburger"
+    },
+    {
+        "param": "rabbit",
+        "name": "Rabbit"
+    },
+    {
+        "param": "bruschetta",
+        "name": "Bruschetta"
+    },
+    {
+        "param": "brie",
+        "name": "Brie"
+    },
+    {
+        "param": "chili",
+        "name": "Chili"
+    },
+    {
+        "param": "hotdog",
+        "name": "Hot Dog"
+    },
+    {
+        "param": "catfish",
+        "name": "Catfish"
+    },
+    {
+        "param": "fruit",
+        "name": "Fruit"
+    },
+    {
+        "param": "lasagna",
+        "name": "Lasagna"
+    },
+    {
+        "param": "icecream",
+        "name": "Ice Cream"
+    },
+    {
+        "param": "charcuterie",
+        "name": "Charcuterie"
+    },
+    {
+        "param": "ham",
+        "name": "Ham"
+    },
+    {
+        "param": "popcorn",
+        "name": "Popcorn"
+    }
+]

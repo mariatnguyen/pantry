@@ -4,53 +4,51 @@ import Pairings from "./Pairings.js";
 import './App.css';
 
 class App extends PureComponent {
-  apiKey = "b329f47d9908439e9984c31a93c553b0";
-
   constructor(props) {
     super(props);
     this.state = {
-      wineParam: '',
-      wineSelection: '',
-      pairings: [{ "text": "Malbec is a dry red wine which is bold and full bodied. It goes especially well with stew, steak, chili, jjigae, and burger.", "pairings": ["stew", "steak", "chili", "jjigae", "burger"] }
-      ]
+      foodParam: '',
+      foodSelection: '',
+      pairings: []
     };
-    this.setWine = this.setWine.bind(this);
+    this.setFood = this.setFood.bind(this);
   }
 
-  setWine(event) {
+  setFood(event) {
     this.setState(
       {
-        wineParam: event.target.id,
-        wineSelection: event.target.innerHTML
+        foodParam: event.target.id,
+        foodSelection: event.target.innerHTML
       });
+      this.getPairings(event.target.id);
   }
 
-  /*
-  componentDidUpdate(prevState) {
-    if (this.state.wineParam !== prevState.wineParam) {
-        this.getPairings(this.state.wineParam);
-    }
-  }
-
-  getPairings(wineParam) {
-    fetch(`${wineParam}.json`)
-      //fetch(`https://api.spoonacular.com/food/wine/dishes?wine=albarino&apiKey=b329f47d9908439e9984c31a93c553b0`)
-      //fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${this.state.wineParam}&apiKey=${apiKey}`)
+  getPairings(foodParam) {
+    let apiKey = "b329f47d9908439e9984c31a93c553b0";
+    //fetch(`${foodParam}.json`, {method: 'GET'})
+    fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${foodParam}&apiKey=${apiKey}`)
       .then((url) => url.json())
       .then(results => {
-        console.log(results);
         this.setState({
           pairings: results
         });
+        document.getElementById("pairings").classList.remove("hide");
+        document.getElementById("pairings").classList.add("show");
       })
   }
-*/
+
+  componentDidMount() {
+  }
+
+//https://api.spoonacular.com/food/wine/pairing?food=apple&apiKey=b329f47d9908439e9984c31a93c553b0
+//https://api.spoonacular.com/recipes/complexSearch?titleMatch=burger&sort=random&number=1&apiKey=b329f47d9908439e9984c31a93c553b0
+//https://api.spoonacular.com/recipes/642540/analyzedInstructions?apiKey=b329f47d9908439e9984c31a93c553b0
 
   render() {
     return (
-      <div className="App">
-        <MainSearch setWine={this.setWine.bind(this)} />
-        {this.state.wineParam.length !== 0 && <Pairings pairings={this.state.pairings} wineSelection={this.state.wineSelection} />}
+        <div className="App">
+          <MainSearch setFood={this.setFood.bind(this)} />
+          {this.state.pairings ? <Pairings pairings={this.state.pairings} foodSelection={this.state.foodSelection} /> : null}
       </div>
     );
   }

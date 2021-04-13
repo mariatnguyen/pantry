@@ -8,12 +8,20 @@ Work in progress...
 
 ### V1
 
-* built
+* Built search function
+* Built introduction
+* Fetch from API
+
+### Need to do
+
+* Fetch recipes
+* Show recipes
 
 ### Possible improvements
 
-* allow latin letters (some wines have accents)
-
+* Allow latin letters
+* Fix logo
+* Flexible search. Example: suggest "pie" when looking up "apple pie"
 
 ## Install
 

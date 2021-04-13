@@ -11,3 +11,6 @@
   text-align: center;
   text-decoration: none;
 }
+.pairing-description__food-selection {
+  text-transform: lowercase;
+}

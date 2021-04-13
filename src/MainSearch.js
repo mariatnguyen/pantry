@@ -1,21 +1,21 @@
 import React, { PureComponent } from "react";
 import backgrounds from "./backgrounds.json";
-import wines from "./wines.json";
+import food from "./food.json";
 import "./MainSearch.css";
 
 export default class MainSearch extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      wineMatches: []
+      foodMatches: []
     };
     this.startSearch = this.startSearch.bind(this);
   }
 
   startSearch = (event) => {
     let input = event.target.value;
-    let matches = wines.filter((wine) => {
-      return wine.name.match(new RegExp(`^${input.replace(/[`~!@#$%^&*()_|+=?;:,.<>{}[\]\\/]/gi, '')}`, 'gi'))
+    let matches = food.filter((food) => {
+      return food.name.match(new RegExp(`^${input.replace(/[`~!@#$%^&*()_|+=?;:,.<>{}[\]\\/]/gi, '')}`, 'gi'))
     });
     document.getElementById("search-results").classList.remove("hide");
 
@@ -23,7 +23,7 @@ export default class MainSearch extends PureComponent {
     if (input === '' || input.length === 0) {
       document.getElementById("search-results").classList.add("hide")
     } else {
-      this.setState({ wineMatches: matches });
+      this.setState({ foodMatches: matches });
     }
     this.searchDropdown(matches)
   }
@@ -36,7 +36,7 @@ export default class MainSearch extends PureComponent {
   }
 
   searchDropdown = (match, index) => {
-    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => { this.props.setWine(e); this.fadeMainSearch() }}>{match.name}</li>
+    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => { this.props.setFood(e);this.fadeMainSearch() }}>{match.name}</li>
   }
 
   render() {
@@ -55,7 +55,7 @@ export default class MainSearch extends PureComponent {
                 <input id="search-bar__input" className="search-bar__input"
                   onChange={this.startSearch}
                   type="text"
-                  placeholder="Search for wine"
+                  placeholder="Search for a wine pairing"
                 />
                 <div className="search-bar__button">
                   <img src="./images/search.svg"
@@ -66,7 +66,7 @@ export default class MainSearch extends PureComponent {
               </div>
               <div className="search-results hide" id="search-results">
                 <ul className="search-results__dropdown" id="search-results__dropdown">
-                  {this.state.wineMatches.length ? this.state.wineMatches.map(this.searchDropdown) : <li className="search-results__noresult">No results</li>}
+                  {this.state.foodMatches.length ? this.state.foodMatches.map(this.searchDropdown) : <li className="search-results__noresult">No results</li>}
                 </ul>
               </div>
             </form>
