@@ -26,7 +26,7 @@ class App extends PureComponent {
   getPairings(foodParam) {
     let apiKey = "b329f47d9908439e9984c31a93c553b0";
     //fetch(`${foodParam}.json`, {method: 'GET'})
-    fetch(`https://api.spoonacular.com/food/wine/dishes?wine=${foodParam}&apiKey=${apiKey}`)
+    fetch(`https://api.spoonacular.com/food/wine/pairing?food=${foodParam}&apiKey=${apiKey}`)
       .then((url) => url.json())
       .then(results => {
         this.setState({
