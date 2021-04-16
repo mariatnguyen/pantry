@@ -12,8 +12,8 @@
         "name": "Steak"
     },
     {
-        "param": "oyster",
-        "name": "Oyster"
+        "param": "oysters",
+        "name": "Oysters"
     },
     {
         "param": "pizza",
@@ -190,5 +190,41 @@
     {
         "param": "popcorn",
         "name": "Popcorn"
+    },
+    {
+        "param": "crab",
+        "name": "Crab"
+    },
+    {
+        "param": "lobster",
+        "name": "Lobster"
+    },
+    {
+        "param": "halibut",
+        "name": "Halibut"
+    },
+    {
+        "param": "hummus",
+        "name": "Hummus"
+    },
+    {
+        "param": "chorizo",
+        "name": "Chorizo"
+    },
+    {
+        "param": "salsa",
+        "name": "Salsa"
+    },
+    {
+        "param": "stew",
+        "name": "Stew"
+    },
+    {
+        "param": "scallops",
+        "name": "Scallops"
+    },
+    {
+        "param": "mango",
+        "name": "Mango"
     }
 ]

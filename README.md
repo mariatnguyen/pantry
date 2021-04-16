@@ -44,5 +44,7 @@ https://unsplash.com/@brookelark
 https://unsplash.com/@irynamykhaylova
 https://unsplash.com/@zanilic
 https://unsplash.com/@felishks
+https://www.pexels.com/@breakingpic
+https://www.pexels.com/@natureday
 https://www.flaticon.com/
 -->

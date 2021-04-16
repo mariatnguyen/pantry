@@ -57,10 +57,7 @@ class App extends PureComponent {
 
   componentDidMount() {
   }
-
-  //https://api.spoonacular.com/recipes/complexSearch?titleMatch=burger&sort=random&number=1&apiKey=b329f47d9908439e9984c31a93c553b0
-  //https://api.spoonacular.com/recipes/642540/analyzedInstructions?apiKey=b329f47d9908439e9984c31a93c553b0
-
+  
   render() {
     return (
       <div className="App">

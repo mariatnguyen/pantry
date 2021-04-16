@@ -1,18 +1,30 @@
 import React, { PureComponent } from "react";
 import "./Pairings.css";
 
-export default class Pairings extends PureComponent {  
-  listSteps = (step, i) => {
-    if (step.name.length !== 0)  { 
-    return <li key={"step" + i}>{step.name}</li>}
+export default class Pairings extends PureComponent {
+
+  listSteps = (item, i) => {
+    return item.steps.map(
+      (individualStep, j) => {
+        let allSteps = [];
+        if (individualStep.length !== 0) {
+          allSteps.push(individualStep.step);
+        }
+        return <li>{allSteps.join("")}</li>;
+      }
+    )
   }
 
-  listMoreSteps = (item, i) => {
+  listIngredients = (item, i) => {
     return item.steps.map(
-      (individualStep,k) => {
-        if (individualStep.length !== 0)  { 
-        return <li key={"step" + k}>{individualStep.step}</li>
-        }
+      (individualStep, j) => {
+        return individualStep.ingredients.map(
+          (ingredients, k) => {
+            if (ingredients.length !== 0) {
+              return <li key={"ingredient" + k}>{ingredients.name}</li>
+            }
+          }
+        )
       }
     )
   }
@@ -42,15 +54,23 @@ export default class Pairings extends PureComponent {
         </div>
         <div className="recipe">
           <div className="recipe--max-width">
-            <h2 className="recipe-header">Recipe</h2>
-            <h3 className="recipe-dish">{this.props.dish}</h3>
-            <div className="recipe--content">
-              <div className="recipe-ingredients">
+            <h2 className="recipe__header">Recipe</h2>
+            <h3 className="recipe__dish">{this.props.dish}</h3>
+            <div className="recipe__content">
+              <div className="recipe__ingredients">
+                <h4 className="recipe__ingredients-header">
+                  Ingredients
+                </h4>
+                <ul>
+                  {this.props.dishRecipe.map(this.listIngredients)}
+                </ul>
               </div>
-              <div className="recipe-steps">
+              <div className="recipe__steps">
+                <h4 className="recipe__steps-header">
+                  Steps
+                </h4>
                 <ol>
-                {this.props.dishRecipe.map(this.listSteps)}
-                {this.props.dishRecipe.map(this.listMoreSteps)}
+                  {this.props.dishRecipe.map(this.listSteps)}
                 </ol>
               </div>
             </div>
