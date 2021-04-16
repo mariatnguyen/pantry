@@ -9,7 +9,10 @@ class App extends PureComponent {
     this.state = {
       foodParam: '',
       foodSelection: '',
-      pairings: []
+      pairings: [],
+      dish: '',
+      id: '',
+      dishRecipe: []
     };
     this.setFood = this.setFood.bind(this);
   }
@@ -20,35 +23,49 @@ class App extends PureComponent {
         foodParam: event.target.id,
         foodSelection: event.target.innerHTML
       });
-      this.getPairings(event.target.id);
+    this.getPairings(event.target.id);
   }
 
   getPairings(foodParam) {
     let apiKey = "b329f47d9908439e9984c31a93c553b0";
-    //fetch(`${foodParam}.json`, {method: 'GET'})
+    //fetch(`cheese.json`, { method: 'GET' })
     fetch(`https://api.spoonacular.com/food/wine/pairing?food=${foodParam}&apiKey=${apiKey}`)
       .then((url) => url.json())
       .then(results => {
         this.setState({
           pairings: results
         });
-        document.getElementById("pairings").classList.remove("hide");
-        document.getElementById("pairings").classList.add("show");
+      })
+    //fetch(`burger.json`, { method: 'GET' })
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?titleMatch=${foodParam}&sort=random&number=1&apiKey=${apiKey}`, {method: 'GET'})
+      .then((url) => url.json())
+      .then(results => {
+        this.setState({
+          id: results.results[0].id,
+          dish: results.results[0].title
+        });
+      //return fetch(`${results.results[0].id}.json`)
+      return fetch(`https://api.spoonacular.com/recipes/${results.results[0].id}/analyzedInstructions?apiKey=b329f47d9908439e9984c31a93c553b0`)
+      })
+      .then((url) => url.json())
+      .then(results => {
+        this.setState({
+          dishRecipe: results
+        });
       })
   }
 
   componentDidMount() {
   }
 
-//https://api.spoonacular.com/food/wine/pairing?food=apple&apiKey=b329f47d9908439e9984c31a93c553b0
-//https://api.spoonacular.com/recipes/complexSearch?titleMatch=burger&sort=random&number=1&apiKey=b329f47d9908439e9984c31a93c553b0
-//https://api.spoonacular.com/recipes/642540/analyzedInstructions?apiKey=b329f47d9908439e9984c31a93c553b0
+  //https://api.spoonacular.com/recipes/complexSearch?titleMatch=burger&sort=random&number=1&apiKey=b329f47d9908439e9984c31a93c553b0
+  //https://api.spoonacular.com/recipes/642540/analyzedInstructions?apiKey=b329f47d9908439e9984c31a93c553b0
 
   render() {
     return (
-        <div className="App">
-          <MainSearch setFood={this.setFood.bind(this)} />
-          {this.state.pairings ? <Pairings pairings={this.state.pairings} foodSelection={this.state.foodSelection} /> : null}
+      <div className="App">
+        <MainSearch setFood={this.setFood.bind(this)} />
+        {this.state.pairings && this.state.dishRecipe ? <Pairings pairings={this.state.pairings} dish={this.state.dish} id={this.state.id} dishRecipe={this.state.dishRecipe} foodSelection={this.state.foodSelection} /> : null}
       </div>
     );
   }

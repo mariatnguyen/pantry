@@ -1,16 +1,99 @@
-.pairings {
+.pairings__header--max-width,
+.pairings-description--max-width,
+.recipe--max-width {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.pairings__header {
+  padding: 30px 50px 30px 50px;
+}
+
+.pairings-description {
+  padding: 50px;
+  background-color:#E8E7DD;
+}
+
+.pairing-description__text {
+  text-align: left;
+  width: 60%;
+}
+
+.pairing__dish-image {
+  float: right;
+  right: 0px;
+  width: 352px;
+  height: 275px;
+  margin-top: -120px;
   padding: 20px;
+  border: 2px solid #d6d6d6;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.pairing-description__food-selection {
+  text-transform: lowercase;
+}
+
+.pairing-description__wine-suggestions {
+  text-transform: capitalize;
+}
+
+.recipe {
+  padding: 50px;
 }
 
 .pairings__footer {
   position: absolute;
   width: 100%;
   bottom: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.pairings__footer-link {
   color: #000;
   font-size: 12px;
-  text-align: center;
   text-decoration: none;
 }
-.pairing-description__food-selection {
-  text-transform: lowercase;
+
+.recipe--max-width {
+  padding-bottom: 40px;
+}
+
+.recipe-steps ol {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.recipe-steps ol li {
+  padding: 20px 0 0 0;
+}
+
+@media screen and (max-width: 1020px) {
+  .pairing-description__text {
+    width: 50%;
+  }
+  .pairing__dish-image {
+    width: 45%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pairing-description__text {
+    width: 100%;
+  }
+
+  .pairing__dish-image {
+    float: none;
+    margin-top: 20px;
+  }
+  
+  .pairing__dish-image {
+    padding: 0;
+    width: 100%;
+    height: auto;
+  }
 }

@@ -71,7 +71,7 @@ export default class MainSearch extends PureComponent {
               </div>
             </form>
           </div>
-          <a className="main-search__footer" href="https://github.com/mariatnguyen" target="_blank" rel="noreferrer">mariatnguyen @ Github</a>
+          <p className="main-search__footer"><a className="main-search__footer-link" href="https://github.com/mariatnguyen" target="_blank" rel="noreferrer">mariatnguyen @ Github</a></p>
         </div>
       </div>
     );
