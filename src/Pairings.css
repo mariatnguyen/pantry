@@ -15,8 +15,9 @@
 }
 
 .pairing-description__text {
-  text-align: left;
   width: 60%;
+  text-align: left;
+  line-height: 1.5em;
 }
 
 .pairing__dish-image {
@@ -124,5 +125,19 @@
     padding: 0;
     width: 100%;
     height: auto;
+  }
+  .recipe__content {
+    display: block;
+  }
+  .recipe__ingredients {
+    width: 100%;
+  }
+  .recipe__ingredients ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .recipe__ingredients ul li {
+    padding-right: 30px;
   }
 }

@@ -11,17 +11,16 @@ Work in progress...
 * Built search function
 * Built introduction
 * Fetch from API
+* Show results for wine pairing and recipe
 
 ### Need to do
 
-* Fetch recipes
-* Show recipes
+* Add an ability to search all over again after showing results
+* Sometimes the API will fetch recipes that are mixed up within the array - in which case, I will have to map the array to every single kind of recipe case
 
 ### Possible improvements
 
 * Allow latin letters
-* Fix logo
-* Flexible search. Example: suggest "pie" when looking up "apple pie"
 
 ## Install
 

@@ -15,7 +15,7 @@ export default class MainSearch extends PureComponent {
   startSearch = (event) => {
     let input = event.target.value;
     let matches = food.filter((food) => {
-      return food.name.match(new RegExp(`^${input.replace(/[`~!@#$%^&*()_|+=?;:,.<>{}[\]\\/]/gi, '')}`, 'gi'))
+      return food.name.match(new RegExp(`${input.replace(/[`~!@#$%^&*()_|+=?;:,.<>{}[\]\\/]/gi, '')}`, 'gi'))
     });
     document.getElementById("search-results").classList.remove("hide");
 

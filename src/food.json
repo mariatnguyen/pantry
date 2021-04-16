@@ -226,5 +226,37 @@
     {
         "param": "mango",
         "name": "Mango"
+    },
+    {
+        "param": "guacamole",
+        "name": "Guacamole"
+    },
+    {
+        "param": "oranges",
+        "name": "Oranges"
+    },
+    {
+        "param": "blueberries",
+        "name": "Blueberries"
+    },
+    {
+        "param": "grapes",
+        "name": "Grapes"
+    },
+    {
+        "param": "cheddar",
+        "name": "Cheddar"
+    },
+    {
+        "param": "tiramisu",
+        "name": "Tiramisu"
+    },
+    {
+        "param": "ramen",
+        "name": "Ramen"
+    },
+    {
+        "param": "omelette",
+        "name": "Omelette"
     }
 ]

@@ -52,12 +52,13 @@ class App extends PureComponent {
         this.setState({
           dishRecipe: results
         });
+        console.log(results);
       })
   }
 
   componentDidMount() {
   }
-  
+
   render() {
     return (
       <div className="App">
