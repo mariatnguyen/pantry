@@ -12,18 +12,15 @@
 
 #main-search {
   opacity: 1;
-  transition: opacity 0.5s;
+  visibility: visible;
+  transition: opacity 0.5s, visibility 1s, top 0.1s ease 1s, left 0.1s ease 1s;
 }
 
 #main-search.fadeOut {
   opacity: 0;
-}
-
-#main-search.hide {
-  position: absolute;
-  top: -9999px;
+  visibility: hidden;
+  top: -9999px; 
   left: -9999px;
-  display: none;
 }
 
 .main-search--dark {

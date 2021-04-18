@@ -10,7 +10,7 @@ export default class Pairings extends PureComponent {
         if (individualStep.length !== 0) {
           allSteps.push(individualStep.step);
         }
-        return <li>{allSteps.join("")}</li>;
+        return <li key={"ingredient" + j}>{allSteps.join("")}</li>;
       }
     )
   }
@@ -20,9 +20,7 @@ export default class Pairings extends PureComponent {
       (individualStep, j) => {
         return individualStep.ingredients.map(
           (ingredients, k) => {
-            if (ingredients.length !== 0) {
-              return <li key={"ingredient" + k}>{ingredients.name}</li>
-            }
+              return ingredients.length !== 0 ? <li key={"ingredient" + k}>{ingredients.name}</li> : null
           }
         )
       }
@@ -49,7 +47,7 @@ export default class Pairings extends PureComponent {
               {this.props.pairings.pairingText ? this.props.pairings.pairingText : <p>No wine pairings found for <span className="pairing-description__food-selection">{this.props.foodSelection}</span>.</p>}
               {this.props.pairings.pairedWines !== undefined && this.props.pairings.pairedWines.length !== 0 ? <p className="pairing-description__wine-suggestions"><b>Suggestions: </b>{this.props.pairings.pairedWines.join(", ")}</p> : null}
             </div>
-            <img className="pairing__dish-image" src={`https://spoonacular.com/recipeImages/${this.props.id}-480x360.jpg`} />
+            <img alt={this.props.dish} className="pairing__dish-image" src={`https://spoonacular.com/recipeImages/${this.props.id}-480x360.jpg`} />
           </div>
         </div>
         <div className="recipe">

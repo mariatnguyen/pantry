@@ -9,6 +9,7 @@ export default class MainSearch extends PureComponent {
     this.state = {
       foodMatches: []
     };
+    this.searchResults = React.createRef();
     this.startSearch = this.startSearch.bind(this);
   }
 
@@ -17,31 +18,24 @@ export default class MainSearch extends PureComponent {
     let matches = food.filter((food) => {
       return food.name.match(new RegExp(`${input.replace(/[`~!@#$%^&*()_|+=?;:,.<>{}[\]\\/]/gi, '')}`, 'gi'))
     });
-    document.getElementById("search-results").classList.remove("hide");
+    this.searchResults.current.classList.remove("hide");
 
     //if input is empty, hide search
     if (input === '' || input.length === 0) {
-      document.getElementById("search-results").classList.add("hide")
+      this.searchResults.current.classList.add("hide")
     } else {
       this.setState({ foodMatches: matches });
     }
     this.searchDropdown(matches)
   }
 
-  fadeMainSearch() {
-    document.getElementById("main-search").classList.add("fadeOut");
-    setTimeout(function () {
-      document.getElementById("main-search").classList.add("hide");
-    }, 1000);
-  }
-
   searchDropdown = (match, index) => {
-    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => { this.props.setFood(e);this.fadeMainSearch() }}>{match.name}</li>
+    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => { this.props.setFood(e)}}>{match.name}</li>
   }
 
   render() {
     return (
-      <div id="main-search" className="main-search" style={{ backgroundImage: `url(${randomBackground})` }}>
+      <div id="main-search" className={this.props.foodParam.length ? "main-search fadeOut" : "main-search"} style={{ backgroundImage: `url(${randomBackground})` }}>
         <div className="main-search--dark">
           <div className="main-search--center">
             <h1 className="main-search__logo"><img src="./images/pantry-white.svg"
@@ -64,7 +58,7 @@ export default class MainSearch extends PureComponent {
                     height="20" />
                 </div>
               </div>
-              <div className="search-results hide" id="search-results">
+              <div className="search-results hide" ref={this.searchResults} id="search-results">
                 <ul className="search-results__dropdown" id="search-results__dropdown">
                   {this.state.foodMatches.length ? this.state.foodMatches.map(this.searchDropdown) : <li className="search-results__noresult">No results</li>}
                 </ul>

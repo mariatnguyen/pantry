@@ -16,11 +16,12 @@ Work in progress...
 ### Need to do
 
 * Add an ability to search all over again after showing results
-* Sometimes the API will fetch recipes that are mixed up within the array - in which case, I will have to map the array to every single kind of recipe case
+* Add ability to move through site using keyboard
 
 ### Possible improvements
 
 * Allow latin letters
+* On rare occasion, the API will fetch recipes that are mixed up within the array - in which case, I will have to map the array to every single kind of recipe case
 
 ## Install
 

@@ -8,6 +8,10 @@
         "name": "Burger"
     },
     {
+        "param": "cheeseburger",
+        "name": "Cheeseburger"
+    },
+    {
         "param": "steak",
         "name": "Steak"
     },
@@ -24,8 +28,12 @@
         "name": "Chicken"
     },
     {
-        "param": "clam",
-        "name": "Clam"
+        "param": "clams",
+        "name": "Clams"
+    },
+    {
+        "param": "mussels",
+        "name": "Mussels"
     },
     {
         "param": "taco",
@@ -128,10 +136,6 @@
         "name": "Kimchi"
     },
     {
-        "param": "paella",
-        "name": "Paella"
-    },
-    {
         "param": "quesadilla",
         "name": "Quesadilla"
     },
@@ -166,6 +170,10 @@
     {
         "param": "catfish",
         "name": "Catfish"
+    },
+    {
+        "param": "shellfish",
+        "name": "Shellfish"
     },
     {
         "param": "fruit",
@@ -258,5 +266,89 @@
     {
         "param": "omelette",
         "name": "Omelette"
+    },
+    {
+        "param": "pineapple",
+        "name": "Pineapple"
+    },
+    {
+        "param": "jambalaya",
+        "name": "Jambalaya"
+    },
+    {
+        "param": "fajitas",
+        "name": "Fajitas"
+    },
+    {
+        "param": "gnocchi",
+        "name": "Gnocchi"
+    },
+    {
+        "param": "parfait",
+        "name": "Parfait"
+    },
+    {
+        "param": "bibimbap",
+        "name": "Bibimbap"
+    },
+    {
+        "param": "bulgogi",
+        "name": "Bulgogi"
+    },
+    {
+        "param": "naan",
+        "name": "Naan"
+    },
+    {
+        "param": "tonkatsu",
+        "name": "Tonkatsu"
+    },
+    {
+        "param": "burrito",
+        "name": "Burrito"
+    },
+    {
+        "param": "biryani",
+        "name": "Biryani"
+    },
+    {
+        "param": "wonton",
+        "name": "Wonton"
+    },
+    {
+        "param": "nachos",
+        "name": "Nachos"
+    },
+    {
+        "param": "quiche",
+        "name": "Quiche"
+    },
+    {
+        "param": "ricotta",
+        "name": "Ricotta"
+    },
+    {
+        "param": "risotto",
+        "name": "Risotto"
+    },
+    {
+        "param": "mozarella",
+        "name": "Mozarella"
+    },
+    {
+        "param": "paella",
+        "name": "Paella"
+    },
+    {
+        "param": "mousse",
+        "name": "Mousse"
+    },
+    {
+        "param": "tamale",
+        "name": "Tamale"
+    },
+    {
+        "param": "flam",
+        "name": "Flan"
     }
 ]
