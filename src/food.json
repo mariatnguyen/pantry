@@ -348,7 +348,11 @@
         "name": "Tamale"
     },
     {
-        "param": "flam",
+        "param": "flan",
         "name": "Flan"
+    },
+    {
+        "param": "cheesecake",
+        "name": "Cheesecake"
     }
 ]

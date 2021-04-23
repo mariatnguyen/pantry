@@ -28,7 +28,6 @@ class App extends PureComponent {
 
   getPairings(foodParam) {
     let apiKey = "b329f47d9908439e9984c31a93c553b0";
-    //fetch(`./json/cheese.json`, { method: 'GET' })
     fetch(`https://api.spoonacular.com/food/wine/pairing?food=${foodParam}&apiKey=${apiKey}`)
       .then((url) => url.json())
       .then(results => {
@@ -36,7 +35,6 @@ class App extends PureComponent {
           pairings: results
         });
       })
-    //fetch(`./json/burger.json`, { method: 'GET' })
     fetch(`https://api.spoonacular.com/recipes/complexSearch?titleMatch=${foodParam}&sort=random&number=1&apiKey=${apiKey}`, {method: 'GET'})
       .then((url) => url.json())
       .then(results => {
@@ -44,7 +42,6 @@ class App extends PureComponent {
           id: results.results[0].id,
           dish: results.results[0].title
         });
-    //return fetch(`./json/${results.results[0].id}.json`)
     return fetch(`https://api.spoonacular.com/recipes/${results.results[0].id}/analyzedInstructions?apiKey=${apiKey}`)
       })
       .then((url) => url.json())
@@ -55,14 +52,11 @@ class App extends PureComponent {
       })
   }
 
-  componentDidMount() {
-  }
-
   render() {
     return (
       <div className="App">
-        <MainSearch setFood={this.setFood.bind(this)} foodParam={this.state.foodParam}/>
-        {this.state.pairings && this.state.dishRecipe ? <Pairings pairings={this.state.pairings} dish={this.state.dish} id={this.state.id} dishRecipe={this.state.dishRecipe} foodSelection={this.state.foodSelection} /> : null}
+        <MainSearch setFood={this.setFood} foodParam={this.state.foodParam}/>
+        {this.state.pairings && this.state.dishRecipe ? <Pairings setFood={this.setFood}  pairings={this.state.pairings} dish={this.state.dish} id={this.state.id} dishRecipe={this.state.dishRecipe} foodSelection={this.state.foodSelection} /> : null}
       </div>
     );
   }

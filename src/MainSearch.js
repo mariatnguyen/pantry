@@ -1,38 +1,9 @@
 import React, { PureComponent } from "react";
+import SearchBar from "./SearchBar";
 import backgrounds from "./backgrounds.json";
-import food from "./food.json";
 import "./MainSearch.css";
 
 export default class MainSearch extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foodMatches: []
-    };
-    this.searchResults = React.createRef();
-    this.startSearch = this.startSearch.bind(this);
-  }
-
-  startSearch = (event) => {
-    let input = event.target.value;
-    let matches = food.filter((food) => {
-      return food.name.match(new RegExp(`${input.replace(/[`~!@#$%^&*()_|+=?;:,.<>{}[\]\\/]/gi, '')}`, 'gi'))
-    });
-    this.searchResults.current.classList.remove("hide");
-
-    //if input is empty, hide search
-    if (input === '' || input.length === 0) {
-      this.searchResults.current.classList.add("hide")
-    } else {
-      this.setState({ foodMatches: matches });
-    }
-    this.searchDropdown(matches)
-  }
-
-  searchDropdown = (match, index) => {
-    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => { this.props.setFood(e)}}>{match.name}</li>
-  }
-
   render() {
     return (
       <div id="main-search" className={this.props.foodParam.length ? "main-search fadeOut" : "main-search"} style={{ backgroundImage: `url(${randomBackground})` }}>
@@ -44,26 +15,7 @@ export default class MainSearch extends PureComponent {
               height="59" />
             </h1>
             <h2 className="main-search__header">What are we cooking today?</h2>
-            <form className="search-bar">
-              <div className="search-bar__field">
-                <input id="search-bar__input" className="search-bar__input"
-                  onChange={this.startSearch}
-                  type="text"
-                  placeholder="Search for a wine pairing"
-                />
-                <div className="search-bar__button">
-                  <img src="./images/search.svg"
-                    alt="search"
-                    width="20"
-                    height="20" />
-                </div>
-              </div>
-              <div className="search-results hide" ref={this.searchResults} id="search-results">
-                <ul className="search-results__dropdown" id="search-results__dropdown">
-                  {this.state.foodMatches.length ? this.state.foodMatches.map(this.searchDropdown) : <li className="search-results__noresult">No results</li>}
-                </ul>
-              </div>
-            </form>
+            <SearchBar setFood={this.props.setFood} foodParam={this.props.foodParam}/>
           </div>
           <p className="main-search__footer"><a className="main-search__footer-link" href="https://github.com/mariatnguyen" target="_blank" rel="noreferrer">mariatnguyen @ Github</a></p>
         </div>

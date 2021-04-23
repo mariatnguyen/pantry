@@ -6,6 +6,11 @@ Pantry uses the [spoonacular API](https://spoonacular.com) to offer suggestions 
 
 Work in progress...
 
+### V2
+
+* Allow latin letters
+* Add an ability to search all over again after showing results
+
 ### V1
 
 * Built search function
@@ -13,14 +18,11 @@ Work in progress...
 * Fetch from API
 * Show results for wine pairing and recipe
 
-### Need to do
-
-* Add an ability to search all over again after showing results
-* Add ability to move through site using keyboard
-
 ### Possible improvements
 
-* Allow latin letters
+* Add animation after search
+* Add try/catch for fetch
+* Add ability to fetch with Enter key
 * On rare occasion, the API will fetch recipes that are mixed up within the array - in which case, I will have to map the array to every single kind of recipe case
 
 ## Install

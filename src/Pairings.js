@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import SearchBar from "./SearchBar.js";
 import "./Pairings.css";
 
 export default class Pairings extends PureComponent {
@@ -37,6 +38,9 @@ export default class Pairings extends PureComponent {
                 alt="Pantry"
                 width="100"
                 height="30" />
+            </div>
+            <div className="pairings__searchbar">
+              <SearchBar setFood={this.props.setFood} foodParam={this.props.foodParam}/>
             </div>
           </div>
         </div>
