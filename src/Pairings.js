@@ -66,12 +66,12 @@ export default class Pairings extends PureComponent {
         </div>
         <div className={this.state.fade ? 'recipe pairings--fade' : 'recipe'} >
           <div className="recipe--max-width">
-            <h2 className="recipe__header">Recipe</h2>
+            <h2 className="recipe__header">{this.props.dish && "Recipe"}</h2>
             <h3 className="recipe__dish">{this.props.dish}</h3>
             <div className="recipe__content">
               <div className="recipe__ingredients">
                 <h4 className="recipe__ingredients-header">
-                  Ingredients
+                  {this.props.dish && "Ingredients"}
                 </h4>
                 <ul>
                   {this.props.dishRecipe.map(this.listIngredients)}
@@ -79,7 +79,7 @@ export default class Pairings extends PureComponent {
               </div>
               <div className="recipe__steps">
                 <h4 className="recipe__steps-header">
-                  Steps
+                  {this.props.dish && "Steps"}
                 </h4>
                 <ol>
                   {this.props.dishRecipe.map(this.listSteps)}
