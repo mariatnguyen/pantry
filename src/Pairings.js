@@ -44,7 +44,7 @@ export default class Pairings extends PureComponent {
         <div className="pairings__header">
           <div className="pairings__header--max-width">
             <div className="pairings__logo">
-              <a href="/"><img src="./images/pantry.svg"
+              <a href="/pantry/"><img src="./images/pantry.svg"
                 alt="Pantry"
                 width="100"
                 height="30" /></a>
