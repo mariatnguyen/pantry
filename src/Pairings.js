@@ -44,10 +44,10 @@ export default class Pairings extends PureComponent {
         <div className="pairings__header">
           <div className="pairings__header--max-width">
             <div className="pairings__logo">
-              <img src="./images/pantry.svg"
+              <a href="/"><img src="./images/pantry.svg"
                 alt="Pantry"
                 width="100"
-                height="30" />
+                height="30" /></a>
             </div>
             <div className="pairings__searchbar">
               <SearchBar setFood={this.props.setFood} foodParam={this.props.foodParam}/>
