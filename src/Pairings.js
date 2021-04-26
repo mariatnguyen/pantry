@@ -3,6 +3,10 @@ import SearchBar from "./SearchBar.js";
 import "./Pairings.css";
 
 export default class Pairings extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { fade: false }
+  }
 
   listSteps = (item, i) => {
     return item.steps.map(
@@ -28,6 +32,12 @@ export default class Pairings extends PureComponent {
     )
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.dish !== prevProps.dish) {
+      this.setState({ fade: true });
+    }
+  }
+
   render() {
     return (
       <div id="pairings" className={"pairings " + this.props.pairings.length !== undefined && this.props.pairings.length !== 0 ? "show" : "hide"}>
@@ -44,7 +54,7 @@ export default class Pairings extends PureComponent {
             </div>
           </div>
         </div>
-        <div className="pairings-description">
+        <div className={this.state.fade ? 'pairings-description pairings--fade' : 'pairings-description'} onAnimationEnd={() => this.setState({ fade: false })}>
           <div className="pairings-description--max-width">
             <h2 className="pairing-description__header">{this.props.foodSelection}</h2>
             <div className="pairing-description__text" key={this.props.foodSelection + 'pairings-text'}  >
@@ -54,7 +64,7 @@ export default class Pairings extends PureComponent {
             <img alt={this.props.dish} className="pairing__dish-image" src={`https://spoonacular.com/recipeImages/${this.props.id}-480x360.jpg`} />
           </div>
         </div>
-        <div className="recipe">
+        <div className={this.state.fade ? 'recipe pairings--fade' : 'recipe'} >
           <div className="recipe--max-width">
             <h2 className="recipe__header">Recipe</h2>
             <h3 className="recipe__dish">{this.props.dish}</h3>

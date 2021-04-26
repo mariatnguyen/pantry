@@ -35,6 +35,7 @@ class App extends PureComponent {
           pairings: results
         });
       })
+    .catch(error => console.log(error));
     fetch(`https://api.spoonacular.com/recipes/complexSearch?titleMatch=${foodParam}&sort=random&number=1&apiKey=${apiKey}`, {method: 'GET'})
       .then((url) => url.json())
       .then(results => {
