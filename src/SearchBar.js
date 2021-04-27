@@ -29,7 +29,7 @@ export default class SearchBar extends PureComponent {
   }
 
   searchDropdown = (match, index) => {
-    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => {this.props.setFood(e)}}>{match.name}</li>
+    return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => {this.props.setFood(e);this.searchResults.current.classList.add("hide")}}>{match.name}</li>
   }
 
   render() {
