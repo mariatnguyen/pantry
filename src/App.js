@@ -27,7 +27,7 @@ class App extends PureComponent {
   }
 
   getPairings(foodParam) {
-    let apiKey = "b329f47d9908439e9984c31a93c553b0";
+    const apiKey = process.env.REACT_APP_API_KEY;
     fetch(`https://api.spoonacular.com/food/wine/pairing?food=${foodParam}&apiKey=${apiKey}`)
       .then((url) => url.json())
       .then(results => {
