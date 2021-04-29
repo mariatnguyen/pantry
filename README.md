@@ -37,15 +37,10 @@ npm start
 ```
 
 Image attributes include: 
-Icons made by [Flat Icons](https://www.flaticon.com/authors/flat-icons) from [Flat Icons](www.flaticon.com)</a></div>
-
-
-<!-- Image attributes include: 
+Icons made by [Flat Icons](https://www.flaticon.com/authors/flat-icons) from [Flat Icons](www.flaticon.com)
 https://unsplash.com/@brookelark
 https://unsplash.com/@irynamykhaylova
 https://unsplash.com/@zanilic
 https://unsplash.com/@felishks
 https://www.pexels.com/@breakingpic
 https://www.pexels.com/@natureday
-https://www.flaticon.com/
--->
