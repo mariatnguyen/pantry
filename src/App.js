@@ -20,10 +20,10 @@ class App extends PureComponent {
   setFood(event) {
     this.setState(
       {
-        foodParam: event.target.id,
-        foodSelection: event.target.innerHTML
+        foodParam: event.type === "click" ? event.target.id : event.toLowerCase(),
+        foodSelection: event.type === "click" ? event.target.innerHTML : event
       });
-    this.getPairings(event.target.id);
+      event.type === "click" ? this.getPairings(event.target.id) : this.getPairings(event.toLowerCase());
   }
 
   getPairings(foodParam) {
@@ -39,11 +39,15 @@ class App extends PureComponent {
     fetch(`https://api.spoonacular.com/recipes/complexSearch?titleMatch=${foodParam}&sort=random&number=1&apiKey=${apiKey}`, {method: 'GET'})
       .then((url) => url.json())
       .then(results => {
-        this.setState({
-          id: results.results[0].id,
-          dish: results.results[0].title
-        });
-    return fetch(`https://api.spoonacular.com/recipes/${results.results[0].id}/analyzedInstructions?apiKey=${apiKey}`)
+        if (results.results.length !== 0) {
+          this.setState({
+            id: results.results[0].id,
+            dish: results.results[0].title
+          });
+          return fetch(`https://api.spoonacular.com/recipes/${results.results[0].id}/analyzedInstructions?apiKey=${apiKey}`)
+        } else {
+          return null
+        }
       })
       .then((url) => url.json())
       .then(results => {
@@ -51,13 +55,14 @@ class App extends PureComponent {
           dishRecipe: results
         });
       })
+      .catch(error => console.log(error));
   }
 
   render() {
     return (
       <div className="App">
         <MainSearch setFood={this.setFood} foodParam={this.state.foodParam}/>
-        {this.state.pairings && this.state.dishRecipe ? <Pairings setFood={this.setFood}  pairings={this.state.pairings} dish={this.state.dish} id={this.state.id} dishRecipe={this.state.dishRecipe} foodSelection={this.state.foodSelection} /> : null}
+        {this.state.pairings && this.state.dishRecipe ? <Pairings setFood={this.setFood} pairings={this.state.pairings} dish={this.state.dish} id={this.state.id} dishRecipe={this.state.dishRecipe} foodSelection={this.state.foodSelection} /> : null}
       </div>
     );
   }

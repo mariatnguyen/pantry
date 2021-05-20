@@ -38,6 +38,10 @@
   background-color:#E8E7DD;
 }
 
+.pairing-description__header {
+  text-transform: capitalize;
+}
+
 .pairing-description__text {
   width: 60%;
   text-align: left;
@@ -147,24 +151,24 @@
   .pairings__header--max-width {
     display: block;
   }
-
+  .pairings__header,
+  .pairings-description,
+  .recipe {
+    padding: 30px;
+  }
   .pairings__searchbar {
     width: 100%;
   }
-  
   .pairings__searchbar .search-results__dropdown {
-  width: calc(100% - 100px) !important;
+  width: calc(100% - 60px) !important;
   }
-  
   .pairing-description__text {
     width: 100%;
   }
-
   .pairing__dish-image {
     float: none;
     margin-top: 20px;
   }
-  
   .pairing__dish-image {
     padding: 0;
     width: 100%;

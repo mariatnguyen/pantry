@@ -21,7 +21,6 @@ Work in progress...
 
 ### Possible improvements
 
-* Add ability to fetch with Enter key
 * On rare occasion, the API will fetch recipes that are mixed up within the array - in which case, I will have to map the array to every single kind of recipe case
 
 ## Install

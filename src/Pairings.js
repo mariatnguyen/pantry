@@ -61,10 +61,10 @@ export default class Pairings extends PureComponent {
               {this.props.pairings.pairingText ? this.props.pairings.pairingText : <p>No wine pairings found for <span className="pairing-description__food-selection">{this.props.foodSelection}</span>.</p>}
               {this.props.pairings.pairedWines !== undefined && this.props.pairings.pairedWines.length !== 0 ? <p className="pairing-description__wine-suggestions"><b>Suggestions: </b>{this.props.pairings.pairedWines.join(", ")}</p> : null}
             </div>
-            <img alt={this.props.dish} className="pairing__dish-image" src={`https://spoonacular.com/recipeImages/${this.props.id}-480x360.jpg`} />
+            {this.props.pairings.status !== "failure" && <img alt={this.props.dish} className="pairing__dish-image" src={`https://spoonacular.com/recipeImages/${this.props.id}-480x360.jpg`} />}
           </div>
         </div>
-        <div className={this.state.fade ? 'recipe pairings--fade' : 'recipe'} >
+        {this.props.pairings.status !== "failure" && <div className={this.state.fade ? 'recipe pairings--fade' : 'recipe'} >
           <div className="recipe--max-width">
             <h2 className="recipe__header">{this.props.dish && "Recipe"}</h2>
             <h3 className="recipe__dish">{this.props.dish}</h3>
@@ -87,7 +87,7 @@ export default class Pairings extends PureComponent {
               </div>
             </div>
           </div>
-        </div>
+        </div>}
         <a className="pairings__footer" href="https://github.com/mariatnguyen" target="_blank" rel="noreferrer">mariatnguyen @ Github</a>
       </div>
     );

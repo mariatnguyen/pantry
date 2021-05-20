@@ -9,6 +9,7 @@ export default class SearchBar extends PureComponent {
       foodMatches: []
     };
     this.searchResults = React.createRef();
+    this.searchInput = React.createRef();
     this.startSearch = this.startSearch.bind(this);
   }
 
@@ -32,12 +33,20 @@ export default class SearchBar extends PureComponent {
     return <li className="search-results__result" key={match.param} id={match.param} onClick={(e) => {this.props.setFood(e);this.searchResults.current.classList.add("hide")}}>{match.name}</li>
   }
 
+  handleEnter = (e) => {
+    if (e.key === 'Enter') {
+      this.props.setFood(this.searchInput.current.value);
+    }
+  }
+
   render() {
     return (
-      <form className="search-bar">
+      <form className="search-bar" onSubmit={(e) => {e.preventDefault()}}>
         <div className="search-bar__field">
           <input id="search-bar__input" className="search-bar__input"
+            ref={this.searchInput} 
             onChange={this.startSearch}
+            onKeyDown={this.handleEnter}
             type="text"
             placeholder="Search for a wine pairing"
           />
@@ -50,7 +59,7 @@ export default class SearchBar extends PureComponent {
         </div>
         <div className="search-results hide" ref={this.searchResults} id="search-results">
           <ul className="search-results__dropdown" id="search-results__dropdown">
-            {this.state.foodMatches.length ? this.state.foodMatches.map(this.searchDropdown) : <li className="search-results__noresult">No results</li>}
+            {this.state.foodMatches.length ? this.state.foodMatches.map(this.searchDropdown) : null}
           </ul>
         </div>
       </form>
